@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "563860713520",
+    "firebase_url": "https://park-now-309809-default-rtdb.firebaseio.com",
+    "project_id": "park-now-309809",
+    "storage_bucket": "park-now-309809.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563860713520:android:a036af210e718247b23df5",
+        "android_client_info": {
+          "package_name": "com.example.parkings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563860713520-3eu062d1v6leaeat9f0s4p38usdlmj3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.parkings",
+            "certificate_hash": "0fd2ed3ba263d9bd9d2a29926cdc73281657d9ad"
+          }
+        },
+        {
+          "client_id": "563860713520-21m0sqltf0dkmg13hv15tj5ohmf85j3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4osULzgBamco6LatsbEIunfNS2BTZm7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563860713520-21m0sqltf0dkmg13hv15tj5ohmf85j3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563860713520:android:1ff80c93911ca4c8b23df5",
+        "android_client_info": {
+          "package_name": "com.example.parknow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563860713520-c4u90kvfj2bbrjhmbl9cgq56tuj1f9tt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.parknow",
+            "certificate_hash": "0fd2ed3ba263d9bd9d2a29926cdc73281657d9ad"
+          }
+        },
+        {
+          "client_id": "563860713520-21m0sqltf0dkmg13hv15tj5ohmf85j3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4osULzgBamco6LatsbEIunfNS2BTZm7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563860713520-21m0sqltf0dkmg13hv15tj5ohmf85j3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

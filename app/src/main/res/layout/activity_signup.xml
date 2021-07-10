@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center_horizontal"
+    android:background="@color/green"
+    tools:context=".coreActivity.SignupActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parknow Mananger"
+                android:textColor="@color/white"
+                android:textSize="44dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/backgroundgg"
+                android:gravity="center_vertical"
+                android:hint="Your email ..."
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="20dp"
+                android:padding="5dp" />
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/backgroundgg"
+                android:gravity="center_vertical"
+                android:hint="Your username ..."
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="20dp"
+                android:padding="5dp" />
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundgg"
+                android:gravity="center_vertical"
+                android:hint="Your phone number ..."
+                android:inputType="phone"
+                android:padding="5dp" />
+            <EditText
+                android:id="@+id/pass"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundgg"
+                android:gravity="center_vertical"
+                android:hint="Your password..."
+                android:inputType="textPassword"
+                android:padding="5dp" />
+            <EditText
+                android:id="@+id/count"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundgg"
+                android:gravity="center_vertical"
+                android:hint="Số lượng chỗ đỗ xe"
+                android:inputType="numberDecimal"
+                android:padding="5dp" />
+            <ExpandableListView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:divider="@color/darkgray"
+                android:dividerHeight="0.5dp"
+                android:background="@drawable/backgroundgg"
+                android:id="@+id/list_parking"/>
+            <TextView
+                android:id="@+id/signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:padding="10dp"
+                android:text="Continue"
+                android:textColor="@color/lightgray"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

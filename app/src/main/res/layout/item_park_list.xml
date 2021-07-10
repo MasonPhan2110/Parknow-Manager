@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:id="@+id/relative">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:id="@+id/name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:text="Dia chi"
+        android:layout_marginLeft="20dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:maxLines="2"
+        android:id="@+id/loc"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loc"
+        android:text="Dem"
+        android:layout_marginLeft="20dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:id="@+id/maxslot"/>
+</RelativeLayout>
