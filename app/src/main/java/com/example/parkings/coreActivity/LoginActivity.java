@@ -22,9 +22,11 @@ import android.widget.TextView;
 
 import com.example.parkings.R;
 import com.example.parkings.controller.CheckUser;
+import com.example.parkings.controller.auth;
 import com.example.parkings.extend.BaseActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.rpc.context.AttributeContext;
 
 public class LoginActivity extends BaseActivity {
     Button fb,gg, btn_signup;
@@ -138,7 +140,8 @@ public class LoginActivity extends BaseActivity {
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                auth auth = new auth(email.getText().toString(),pass.getText().toString(),LoginActivity.this);
+                auth.signin();
             }
         });
     }
