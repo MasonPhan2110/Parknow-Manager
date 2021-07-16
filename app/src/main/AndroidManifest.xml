@@ -22,6 +22,7 @@
         <activity android:name=".coreActivity.ParkActivity" />
         <activity android:name=".coreActivity.SignupActivity" />
         <activity android:name=".coreActivity.EditProfile" />
+        <activity android:name=".coreActivity.MessageActivity" />
         <activity
             android:name=".coreActivity.LoginActivity"
             android:windowSoftInputMode="adjustResize">

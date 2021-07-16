@@ -29,12 +29,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private Context context;
     private List<Users> mUser;
     private boolean ischat;
-    String thelastmsg;
+    String thelastmsg, parkid;
 
-    public UserAdapter(Context context, List<Users> mUser, boolean ischat) {
+    public UserAdapter(Context context, List<Users> mUser, boolean ischat, String parkid) {
         this.context = context;
         this.mUser = mUser;
         this.ischat = ischat;
+        this.parkid = parkid;
     }
 
     @NonNull
@@ -49,7 +50,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         final Users users = mUser.get(position);
         holder.user_name.setText(users.getUsername());
         if (ischat) {
-            lastMessage(users.getId(), holder.last_msg);
+            lastMessage(parkid, users.getId(), holder.last_msg );
         } else {
             holder.last_msg.setVisibility(View.GONE);
         }
@@ -58,6 +59,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             public void onClick(View v) {
                 Intent intent = new Intent(context, MessageActivity.class);
                 intent.putExtra("userid", users.getId());
+                intent.putExtra("parkid", parkid);
                 context.startActivity(intent);
 
             }
@@ -81,20 +83,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         }
     }
 
-    private void lastMessage(final String userid, final TextView last_msg) {
+    private void lastMessage(String parkid,final String userid, final TextView last_msg) {
         thelastmsg = "";
-        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Chats");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Chat chat = dataSnapshot.getValue(Chat.class);
-                    if (chat.getReceiver().equals(firebaseUser.getUid()) && chat.getSender().equals(userid)
-                            || chat.getReceiver().equals(userid) && chat.getSender().equals(firebaseUser.getUid())) {
+                    if (chat.getReceiver().equals(parkid) && chat.getSender().equals(userid)
+                            || chat.getReceiver().equals(userid) && chat.getSender().equals(parkid)) {
                         thelastmsg = chat.getMessage();
                     }
-                    if (!chat.isIsseen() && chat.getReceiver().equals(firebaseUser.getUid()) && chat.getSender().equals(userid)) {
+                    if (!chat.isIsseen() && chat.getReceiver().equals(parkid) && chat.getSender().equals(userid)) {
                         last_msg.setTypeface(null, Typeface.BOLD);
                     } else {
                         last_msg.setTypeface(null, Typeface.NORMAL);

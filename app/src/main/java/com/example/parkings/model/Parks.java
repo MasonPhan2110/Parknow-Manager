@@ -5,7 +5,6 @@ public class Parks {
     public Parks(String email,String id,String id_park,String phone,String username){
         this.email = email;
         this.id = id;
-        this.id_park = id_park;
         this.phone = phone;
         this.username = username;
     }

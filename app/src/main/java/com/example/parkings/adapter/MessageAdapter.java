@@ -22,11 +22,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     public static final int MSG_TYPE_RIGHT = 1;
     private Context mcontext;
     private List<Chat> mChat;
-    FirebaseUser fuser;
+    String parkid;
 
-    public MessageAdapter(Context mcontext, List<Chat> mChat){
+    public MessageAdapter(Context mcontext, List<Chat> mChat, String parkid){
         this.mChat = mChat;
         this.mcontext = mcontext;
+        this.parkid = parkid;
     }
 
     @NonNull
@@ -64,8 +65,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     @Override
     public int getItemViewType(int position) {
-        fuser = FirebaseAuth.getInstance().getCurrentUser();
-        if (mChat.get(position).getSender().equals(fuser.getUid())){
+        if (mChat.get(position).getSender().equals(parkid)){
             return MSG_TYPE_RIGHT;
         }
         else{

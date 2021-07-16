@@ -102,24 +102,24 @@ public class MessageActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Users users = snapshot.getValue(Users.class);
                 username.setText(users.getUsername());
-                readMessage(fuser.getUid(), users.getId());
+                readMessage(userid, parkid);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-        seenMessage(userid);
+        seenMessage(userid, parkid);
     }
 
-    private void seenMessage(final String userid) {
+    private void seenMessage(final String userid, String parkid) {
         reference = FirebaseDatabase.getInstance().getReference("Chats");
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                     Chat chat = dataSnapshot.getValue(Chat.class);
-                    if (chat.getReceiver().equals(fuser.getUid()) && chat.getSender().equals(userid)){
+                    if (chat.getReceiver().equals(parkid) && chat.getSender().equals(userid)){
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("isseen",true);
                         dataSnapshot.getRef().updateChildren(hashMap);
@@ -148,7 +148,7 @@ public class MessageActivity extends AppCompatActivity {
                         mchat.add(chat);
                     }
 
-                    messageAdapter = new MessageAdapter(getApplicationContext(),mchat);
+                    messageAdapter = new MessageAdapter(getApplicationContext(),mchat, parkid);
                     recyclerView.setAdapter(messageAdapter);
                 }
             }
